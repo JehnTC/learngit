@@ -1,0 +1,70 @@
+这是一份经过整理的文件
+
+整个文件和原来一样，分为User、APP、BSP、HARDWARE四层
+
+User主要是一些启动文件和总体执行的文件。
+其中增加了mapper文件，主要存放每个模块的执行方向
+
+APP是由工程组书写/修改的代码
+
+BSP部分是对板的硬件部分封装函数
+
+HARDWARE是硬件控制部分
+
+/******************定时器引脚说明*****************/
+
+定时器1的通道没有对应引脚
+
+定时器2通道1复用为编码器 PA0
+定时器2通道2复用为编码器 PA1
+定时器2通道3对应舵机1，频率50Hz PA2
+定时器2通道4对应舵机2，频率52Hz PA3
+
+定时器3的通道没有对应引脚
+
+定时器4通道1空闲 PD12 
+定时器4通道2空闲 PD13 
+定时器4通道3对应电推杆3，频率1kHz GPIOD, GPIO_PinSource14-->F-->IN1
+定时器4通道4对应电推杆3，频率1kHz GPIOD, GPIO_PinSource15-->E-->IN2
+
+定时器5用于PWM输出控制推杆
+定时器5通道1对应电推杆1，频率1kHz GPIOH, GPIO_PinSource10-->D-->IN1
+定时器5通道2对应电推杆1，频率1kHz GPIOH, GPIO_PinSource11-->C-->IN2
+定时器5通道3对应电推杆2，频率1kHz GPIOH, GPIO_PinSource12-->B-->IN3
+定时器5通道4对应电推杆2，频率1kHz GPIOI, GPIO_PinSource0 -->A-->IN4
+
+定时器6 主程序的中断
+
+定时器8通道1 PI5-->W
+定时器8通道2 PI6-->X
+定时器8通道3对应电推杆4，频率1kHz PI7-->Y-->IN3   //输出只有1V，于是弃用
+定时器8通道4对应电推杆4，频率1kHz PI5-->Z-->IN4   //输出只有1V，于是弃用
+
+定时器9通道1复用为编码器 PE5 
+定时器9通道2复用为编码器 PE6 
+
+定时器12的通道没有对应引脚
+
+/******************CAN通信引脚说明*****************/
+
+CAN1_RX_PIN                 	GPIO_Pin_0
+CAN1_TX_PIN                 	GPIO_Pin_1
+CAN1_RX_GPIO_PORT          		GPIOD
+CAN1_TX_GPIO_PORT          		GPIOD
+
+CAN2_RX_PIN                 	GPIO_Pin_12
+CAN2_TX_PIN                 	GPIO_Pin_13
+CAN2_RX_GPIO_PORT          		GPIOB
+CAN2_TX_GPIO_PORT          		GPIOB
+
+
+
+
+
+
+
+
+
+
+
+
